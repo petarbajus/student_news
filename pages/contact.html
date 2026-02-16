@@ -1,148 +1,148 @@
-<!-- =========================
-     contact.html (UPDATED NAV + SEARCH INPUT ID)
-========================= -->
 <!doctype html>
 <html lang="hr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studentski Portal | Kontakt</title>
-  <link rel="stylesheet" href="../css/style.css" />
-  <script defer src="../js/main.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studentski Portal | Kontakt</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
 
-<!-- Success Modal -->
-<div class="modal" id="successModal" hidden>
-  <div class="modal-overlay"></div>
+  <div class="modal" id="successModal" hidden>
+    <div class="modal-overlay"></div>
 
-  <div class="modal-content">
-    <button class="modal-close" id="closeModal" aria-label="Zatvori">×</button>
-    <h2>Poruka poslana</h2>
-    <p>Hvala! Tvoja poruka je uspješno poslana.</p>
-    <button class="btn" id="okModal">U redu</button>
-  </div>
-</div>
-
-<body>
-  <div class="topbar">
-    <div class="container topbar-row">
-      <a class="logo" href="../index.html">STUDENTSKI<br><span>PORTAL</span></a>
-      <div class="top-actions">
-      <a class="small-link" href="./login.html">Login</a>
-      <a class="small-link" href="./register.html">Registracija</a>
-        <button class="burger" id="burger" type="button" aria-label="Otvori izbornik">☰</button>
-      </div>
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" aria-label="Zatvori">
+        ×
+      </button>
+      <h2>Poruka poslana</h2>
+      <p>Hvala! Tvoja poruka je uspješno poslana.</p>
+      <button class="btn" id="okModal">U redu</button>
     </div>
   </div>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav" id="nav">
-        <a class="nav-link" href="vijesti.html">Vijesti</a>
-        <a class="nav-link" href="kolumne.html">Kolumne</a>
-        <a class="nav-link" href="udruge.html">Udruge</a>
-        <a class="nav-link" href="projekti.html">Projekti</a>
-        <a class="nav-link" href="fotogalerija.html">Fotogalerija</a>
-        <a class="nav-link" href="events.html">Eventi</a>
-        <a class="nav-link" href="contact.html">Kontakt</a>
-      </nav>
-
-
-    <div class="searchbar" id="searchbar">
-      <input id="globalSearch" type="search" placeholder="Upiši pojam..." aria-label="Pretraži pojam" />
-      <button class="btn" type="button" id="doSearch">Pretraži</button>
-    </div>
-
-    </div>
-  </header>
-
-  <main class="container page">
-    <section class="content">
-      <div class="section-title">
-        <h1>Kontakt</h1>
-        <p class="muted">Ovdje ide tvoja kontakt forma + JS validacija.</p>
+  <body>
+    <div class="topbar">
+      <div class="container topbar-row">
+        <a class="logo" href="../index.html"
+          >STUDENTSKI<br /><span>PORTAL</span></a
+        >
+        <div class="top-actions">
+          <a class="small-link" href="./login.html">Login</a>
+          <a class="small-link" href="./register.html">Registracija</a>
+          <button
+            class="burger"
+            id="burger"
+            type="button"
+            aria-label="Otvori izbornik"
+          >
+            ☰
+          </button>
+        </div>
       </div>
-
-<div class="card">
-  <form id="contactForm" novalidate>
-    <!-- Receiver (hardcoded) -->
-    <div class="form-group">
-      <label for="toEmail">Primatelj</label>
-      <input
-        type="email"
-        id="toEmail"
-        value="kontakt@studentski-portal.hr"
-        readonly
-      />
-      <p class="muted">Ova adresa je fiksna i ne može se mijenjati.</p>
     </div>
 
-    <!-- Name -->
-    <div class="form-group">
-      <label for="fullName">Ime i prezime *</label>
-      <input
-        type="text"
-        id="fullName"
-        placeholder="npr. Ivan Horvat"
-        required
-      />
-    </div>
+    <header class="header">
+      <div class="container">
+        <nav class="nav" id="nav">
+          <a class="nav-link" href="vijesti.html">Vijesti</a>
+          <a class="nav-link" href="kolumne.html">Kolumne</a>
+          <a class="nav-link" href="udruge.html">Udruge</a>
+          <a class="nav-link" href="projekti.html">Projekti</a>
+          <a class="nav-link" href="fotogalerija.html">Fotogalerija</a>
+          <a class="nav-link" href="events.html">Eventi</a>
+          <a class="nav-link" href="contact.html">Kontakt</a>
+        </nav>
 
-    <!-- Sender email -->
-    <div class="form-group">
-      <label for="email">Email pošiljatelja *</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="npr. ivan@email.com"
-        required
-      />
-    </div>
+        <div class="searchbar" id="searchbar">
+          <input
+            id="globalSearch"
+            type="search"
+            placeholder="Upiši pojam..."
+            aria-label="Pretraži pojam"
+          />
+          <button class="btn" type="button" id="doSearch">Pretraži</button>
+        </div>
+      </div>
+    </header>
 
-    <!-- Subject -->
-    <div class="form-group">
-      <label for="subject">Naslov poruke *</label>
-      <input
-        type="text"
-        id="subject"
-        placeholder="npr. Upit o projektu"
-        required
-      />
-    </div>
+    <main class="container page">
+      <section class="content">
+        <div class="section-title">
+          <h1>Kontakt</h1>
+          <p class="muted">Ovdje ide tvoja kontakt forma + JS validacija.</p>
+        </div>
 
-    <!-- Message -->
-    <div class="form-group">
-      <label for="message">Poruka *</label>
-      <textarea
-        id="message"
-        rows="5"
-        placeholder="Upiši poruku..."
-        required
-      ></textarea>
-    </div>
+        <div class="card">
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="toEmail">Primatelj</label>
+              <input
+                type="email"
+                id="toEmail"
+                value="kontakt@studentski-portal.hr"
+                readonly
+              />
+              <p class="muted">Ova adresa je fiksna i ne može se mijenjati.</p>
+            </div>
 
-    <!-- Status message -->
-    <p class="muted" id="formStatus"></p>
+            <div class="form-group">
+              <label for="fullName">Ime i prezime *</label>
+              <input
+                type="text"
+                id="fullName"
+                placeholder="npr. Ivan Horvat"
+                required
+              />
+            </div>
 
-    <!-- Submit -->
-    <button class="btn" type="submit">Pošalji poruku</button>
-  </form>
-</div>
+            <div class="form-group">
+              <label for="email">Email pošiljatelja *</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="npr. ivan@email.com"
+                required
+              />
+            </div>
 
-    </section>
-  </main>
+            <div class="form-group">
+              <label for="subject">Naslov poruke *</label>
+              <input
+                type="text"
+                id="subject"
+                placeholder="npr. Upit o projektu"
+                required
+              />
+            </div>
 
-  <footer class="footer">
-    <div class="container footer-row footer-stack">
-      <p class="footer-site">
-        © <span id="year"></span> Studentski Portal
-      </p>
+            <div class="form-group">
+              <label for="message">Poruka *</label>
+              <textarea
+                id="message"
+                rows="5"
+                placeholder="Upiši poruku..."
+                required
+              ></textarea>
+            </div>
 
-      <p class="footer-author">
-        Created by Petar Bajus —
-        <a href="mailto:bajus.petar@email.com">bajus.petar@email.com</a>
-      </p>
-    </div>
-  </footer>
-</body>
+            <p class="muted" id="formStatus"></p>
+
+            <button class="btn" type="submit">Pošalji poruku</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row footer-stack">
+        <p class="footer-site">© <span id="year"></span> Studentski Portal</p>
+
+        <p class="footer-author">
+          Created by Petar Bajus —
+          <a href="mailto:bajus.petar@email.com">bajus.petar@email.com</a>
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

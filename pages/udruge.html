@@ -1,68 +1,77 @@
-<!-- =========================
-     udruge.html (UPDATED NAV)
-========================= -->
 <!doctype html>
 <html lang="hr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studentski Portal | Udruge</title>
-  <link rel="stylesheet" href="../css/style.css" />
-  <script defer src="../js/main.js"></script>
-</head>
-<body>
-  <div class="topbar">
-    <div class="container topbar-row">
-      <a class="logo" href="../index.html">STUDENTSKI<br><span>PORTAL</span></a>
-      <div class="top-actions">
-        <a class="small-link" href="./login.html">Login</a>
-        <a class="small-link" href="./register.html">Registracija</a>
-        <button class="burger" id="burger" type="button" aria-label="Otvori izbornik">☰</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studentski Portal | Udruge</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script defer src="../js/main.js"></script>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar-row">
+        <a class="logo" href="../index.html"
+          >STUDENTSKI<br /><span>PORTAL</span></a
+        >
+        <div class="top-actions">
+          <a class="small-link" href="./login.html">Login</a>
+          <a class="small-link" href="./register.html">Registracija</a>
+          <button
+            class="burger"
+            id="burger"
+            type="button"
+            aria-label="Otvori izbornik"
+          >
+            ☰
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav" id="nav">
-        <a class="nav-link" href="vijesti.html">Vijesti</a>
-        <a class="nav-link" href="kolumne.html">Kolumne</a>
-        <a class="nav-link" href="udruge.html">Udruge</a>
-        <a class="nav-link" href="projekti.html">Projekti</a>
-        <a class="nav-link" href="fotogalerija.html">Fotogalerija</a>
-        <a class="nav-link" href="events.html">Eventi</a>
-        <a class="nav-link" href="contact.html">Kontakt</a>
-      </nav>
+    <header class="header">
+      <div class="container">
+        <nav class="nav" id="nav">
+          <a class="nav-link" href="vijesti.html">Vijesti</a>
+          <a class="nav-link" href="kolumne.html">Kolumne</a>
+          <a class="nav-link" href="udruge.html">Udruge</a>
+          <a class="nav-link" href="projekti.html">Projekti</a>
+          <a class="nav-link" href="fotogalerija.html">Fotogalerija</a>
+          <a class="nav-link" href="events.html">Eventi</a>
+          <a class="nav-link" href="contact.html">Kontakt</a>
+        </nav>
 
-      <div class="searchbar" id="searchbar">
-        <input id="globalSearch" type="search" placeholder="Upiši pojam..." aria-label="Pretraži pojam" />
-        <button class="btn" type="button" id="doSearch">Pretraži</button>
+        <div class="searchbar" id="searchbar">
+          <input
+            id="globalSearch"
+            type="search"
+            placeholder="Upiši pojam..."
+            aria-label="Pretraži pojam"
+          />
+          <button class="btn" type="button" id="doSearch">Pretraži</button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="container page">
-    <section class="content">
-      <div class="section-title">
-        <h1>Udruge</h1>
-        <p class="muted">Popis studentskih udruga (demo baza).</p>
+    <main class="container page">
+      <section class="content">
+        <div class="section-title">
+          <h1>Udruge</h1>
+          <p class="muted">Popis studentskih udruga.</p>
+        </div>
+
+        <div class="cards cards-2" id="udrugeList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row footer-stack">
+        <p class="footer-site">© <span id="year"></span> Studentski Portal</p>
+
+        <p class="footer-author">
+          Created by Petar Bajus —
+          <a href="mailto:bajus.petar@email.com">bajus.petar@email.com</a>
+        </p>
       </div>
-
-      <div class="cards cards-2" id="udrugeList"></div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-row footer-stack">
-      <p class="footer-site">
-        © <span id="year"></span> Studentski Portal
-      </p>
-
-      <p class="footer-author">
-        Created by Petar Bajus —
-        <a href="mailto:bajus.petar@email.com">bajus.petar@email.com</a>
-      </p>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>

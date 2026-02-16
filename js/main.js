@@ -3,12 +3,22 @@
 ====================================================== */
 
 class News {
-  constructor({ id, type, title, excerpt, content, date, readTime, tag, image }) {
+  constructor({
+    id,
+    type,
+    title,
+    excerpt,
+    content,
+    date,
+    readTime,
+    tag,
+    image,
+  }) {
     this.id = id;
-    this.type = type; // "Vijesti" or "Kolumne"
+    this.type = type;
     this.title = title;
-    this.excerpt = excerpt; // short preview
-    this.content = content; // full text (string)
+    this.excerpt = excerpt;
+    this.content = content;
     this.date = date;
     this.readTime = readTime;
     this.tag = tag ?? type;
@@ -20,20 +30,19 @@ class Udruga {
   constructor({ id, name, description, content, category, image }) {
     this.id = id;
     this.name = name;
-    this.description = description; // short preview
-    this.content = content;         // FULL TEXT
+    this.description = description;
+    this.content = content;
     this.category = category;
     this.image = image ?? null;
   }
 }
 
-
 class Projekt {
   constructor({ id, name, description, content, status, image }) {
     this.id = id;
     this.name = name;
-    this.description = description; // short preview
-    this.content = content;         // FULL TEXT
+    this.description = description;
+    this.content = content;
     this.status = status;
     this.image = image ?? null;
   }
@@ -43,29 +52,32 @@ class Event {
   constructor({ id, title, date, location, description }) {
     this.id = id;
     this.title = title;
-    this.date = date;           // "DD.MM.YYYY."
-    this.location = location;   // NEW
+    this.date = date;
+    this.location = location;
     this.description = description;
   }
 }
-
-/* ======================================================
-   2) FAKE DATA (SIMULATED DATABASE)
-====================================================== */
 
 const NEWS_DB = [
   new News({
     id: "n1",
     type: "Vijesti",
     title: "Otvoren natječaj za stipendiju — provjeri uvjete",
-    excerpt: "Kratki uvod (2–3 rečenice) kao na news portalu.",
+    excerpt: "Dobra vijest za najbolje studente",
     content:
-      "Objavljen je novi natječaj za stipendije za akademsku godinu 2026./2027.\n\n" +
-      "Prijave su otvorene do 01.03.2026. Potrebno je pripremiti dokumentaciju (potvrde o upisu, ocjene i ostale priloge).\n\n" +
-      "Detalje uvjeta i potrebne dokumente provjeri na službenoj stranici institucije.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     date: "12.02.2026.",
     readTime: "3 min",
-    image: "../images/library.jpg",
+    image: "../images/scholarship.jpg",
   }),
   new News({
     id: "n2",
@@ -73,9 +85,16 @@ const NEWS_DB = [
     title: "Produženo radno vrijeme knjižnice",
     excerpt: "Knjižnica radi dulje tijekom ispitnih rokova.",
     content:
-      "Tijekom ispitnih rokova knjižnica produljuje radno vrijeme kako bi studentima olakšala pripremu.\n\n" +
-      "Provjeri novi raspored na oglasnoj ploči ili web stranici knjižnice.\n\n" +
-      "Preporuka: rezerviraj mjesto ranije u danu ako planiraš duže učenje.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     date: "11.02.2026.",
     readTime: "2 min",
     image: "../images/library.jpg",
@@ -86,12 +105,19 @@ const NEWS_DB = [
     title: "Otvorene prijave za praksu",
     excerpt: "Prijavi se na programe prakse i stekni iskustvo.",
     content:
-      "Otvorene su prijave za stručnu praksu u više partnerskih tvrtki.\n\n" +
-      "Pripremi životopis i kratko motivacijsko pismo, a zatim se prijavi putem obrasca.\n\n" +
-      "Praksa traje 6–8 tjedana i uključuje mentorstvo te rad na stvarnim zadacima.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     date: "09.02.2026.",
     readTime: "3 min",
-    image: "../images/library.jpg",
+    image: "../images/internship.jpg",
   }),
   new News({
     id: "n4",
@@ -99,13 +125,20 @@ const NEWS_DB = [
     title: "Kako preživjeti ispitne rokove (bez panike)",
     excerpt: "Savjeti za fokus, odmor i planiranje.",
     content:
-      "Ispitni rokovi nisu sprint — više su kao maraton s pauzama.\n\n" +
-      "Planiraj učenje u blokovima (npr. 25–50 minuta), a pauze koristi za kratko kretanje ili vodu.\n\n" +
-      "Najvažnije: spavanje nije luksuz. Dobar san često vrijedi više od dodatnog sata učenja.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     date: "10.02.2026.",
     readTime: "4 min",
     tag: "Kolumna",
-    image: "../images/library.jpg",
+    image: "../images/no_stress_column.jpg",
   }),
   new News({
     id: "n5",
@@ -113,13 +146,20 @@ const NEWS_DB = [
     title: "Studentski budžet: realnost vs plan",
     excerpt: "Kako rasporediti troškove i izbjeći zadnji tjedan u minusu.",
     content:
-      "Budžet zvuči dosadno dok ga ne zatrebaš.\n\n" +
-      "Kreni od stvarnih troškova: hrana, prijevoz, skripte i neplanirane sitnice.\n\n" +
-      "Trik: odvoji mali iznos za “nepredviđeno” — tako te manje boli kad se dogodi.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     date: "08.02.2026.",
     readTime: "5 min",
     tag: "Kolumna",
-    image: "../images/library.jpg",
+    image: "../images/student_budget.jpg",
   }),
   new News({
     id: "n6",
@@ -127,81 +167,134 @@ const NEWS_DB = [
     title: "Učenje pametnije, ne duže",
     excerpt: "Pomodoro i aktivno prisjećanje kao metode učenja.",
     content:
-      "Dužina učenja nije isto što i kvalitetno učenje.\n\n" +
-      "Aktivno prisjećanje (quiz, pitanja, objašnjavanje naglas) jača pamćenje više od ponovnog čitanja.\n\n" +
-      "Pomodoro ti pomaže da ostaneš fokusiran — ali prilagodi trajanje sebi, ne obrnuto.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     date: "06.02.2026.",
     readTime: "4 min",
     tag: "Kolumna",
-    image: "../images/library.jpg",
+    image: "../images/study_hard.webp",
   }),
 ];
 
 const UDRUGE_DB = [
   new Udruga({
     id: "u1",
-    name: "Volonterska udruga",
+    name: "Feniks",
     description: "Humanitarne akcije i volontiranje.",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     category: "Volonterstvo",
-    image: "../images/library.jpg",
+    image: "../images/feniks.jpg",
   }),
   new Udruga({
     id: "u2",
-    name: "IT udruga",
-    description: "Radionice programiranja i hackathoni.",
+    name: "Centar za razvoj mladih",
+    description: "Psihološka podrška mladih.",
     content:
-      "Volonterska udruga okuplja studente koji žele pomagati zajednici.\n\n" +
-      "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
-      "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     category: "IT",
-    image: "../images/library.jpg",
+    image: "../images/centar_za_razvoj_mladih.jpg",
   }),
   new Udruga({
     id: "u3",
-    name: "Sportska udruga",
-    description: "Turniri i sportska druženja.",
+    name: "IAESTE Croatia",
+    description: "Druženja i radionice.",
     content:
-      "Volonterska udruga okuplja studente koji žele pomagati zajednici.\n\n" +
-      "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
-      "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     category: "Sport",
-    image: "../images/library.jpg",
+    image: "../images/iaste_croatia.png",
   }),
 ];
 
 const PROJEKTI_DB = [
   new Projekt({
     id: "p1",
-    name: "Hackathon 2026",
-    description: "Timsko natjecanje u 24 sata.",
+    name: "Misa mladih",
+    description: "Duševno uzdizanje.",
     content:
-      "Volonterska udruga okuplja studente koji žele pomagati zajednici.\n\n" +
-      "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
-      "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     status: "Otvorene prijave",
-    image: "../images/library.jpg",
+    image: "../images/church.webp",
   }),
   new Projekt({
     id: "p2",
     name: "Startup inkubator",
     description: "Mentorstvo i razvoj studentskih ideja.",
     content:
-      "Volonterska udruga okuplja studente koji žele pomagati zajednici.\n\n" +
-      "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
-      "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     status: "U tijeku",
-    image: "../images/library.jpg",
+    image: "../images/startup.jpg",
   }),
   new Projekt({
     id: "p3",
-    name: "Digitalni vodič kampusa",
-    description: "Interaktivna mapa lokacija.",
+    name: "Vizionar",
+    description: "Predstavljanje ideja za boljitak sveučilišta.",
     content:
-      "Volonterska udruga okuplja studente koji žele pomagati zajednici.\n\n" +
-      "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
-      "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.\n\n" +
+      "Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.\n\n" +
+      "Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.\n\n" +
+      "Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.\n\n" +
+      "Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem.\n\n" +
+      "At interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet.\n\n" +
+      "Donec lacus nunc, viverra nec. Blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa.\n\n" +
+      "Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.\n\n" +
+      "Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. Ut eu diam at pede suscipit sodales. Aenean lectus elit, fermentum non, convallis id, sagittis at, neque. Nullam mauris orci, aliquet et, iaculis et, viverra vitae, ligula.\n\n" +
+      "Nulla ut felis in purus aliquam imperdiet. Maecenas aliquet mollis lectus. Vivamus consectetuer risus et tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec odio urna, tempus molestie, porttitor ut, iaculis quis, sem.",
     status: "U razvoju",
-    image: "../images/library.jpg",
+    image: "../images/vision.jpg",
   }),
 ];
 
@@ -225,12 +318,13 @@ const EVENTS_DB = [
     title: "Studentski sportski dan",
     date: "25.02.2026.",
     location: "Sportska dvorana",
-    description: "Turniri i rekreativne aktivnosti (nogomet, košarka, odbojka).",
+    description:
+      "Turniri i rekreativne aktivnosti (nogomet, košarka, odbojka).",
   }),
 ];
 
 /* ======================================================
-   3) HELPERS
+   3) GENERAL HELPERS
 ====================================================== */
 
 function escapeHtml(str) {
@@ -246,8 +340,22 @@ function getPageTypeByPath() {
   const file = (location.pathname.split("/").pop() || "").toLowerCase();
   if (file === "vijesti.html") return "Vijesti";
   if (file === "kolumne.html") return "Kolumne";
-  return null; // index or other pages
+  return null;
 }
+
+function parseCroDateToISO(dateStr) {
+  const clean = String(dateStr || "")
+    .trim()
+    .replace(/\.$/, "");
+  const m = clean.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  if (!m) return null;
+  const [, dd, mm, yyyy] = m;
+  return `${yyyy}-${mm}-${dd}`;
+}
+
+/* ======================================================
+   4) TEMPLATE HELPERS (HTML builders)
+====================================================== */
 
 function makeLead(news) {
   const imgSrc = news.image ?? "../images/hero.jpg";
@@ -289,7 +397,7 @@ function makeNewsCard(news) {
 
 function makeSearchCard(r) {
   const href = `article.html?kind=${encodeURIComponent(r.kind)}&id=${encodeURIComponent(r.id)}`;
-  const imgSrc = r.image ?? "img/hero.jpg";
+  const imgSrc = r.image ?? "../images/hero.jpg";
 
   return `
     <article class="card">
@@ -306,7 +414,7 @@ function makeSearchCard(r) {
 }
 
 /* ======================================================
-   4) RENDER: LIST PAGES (index/vijesti/kolumne)
+   5) RENDERERS: NEWS LIST PAGES (index/vijesti/kolumne)
 ====================================================== */
 
 function renderNewsList({ type = null } = {}) {
@@ -315,7 +423,7 @@ function renderNewsList({ type = null } = {}) {
   if (!list) return;
 
   let items = [...NEWS_DB];
-  if (type) items = items.filter(n => n.type === type);
+  if (type) items = items.filter((n) => n.type === type);
 
   if (!items.length) {
     if (leadSlot) leadSlot.innerHTML = "";
@@ -336,7 +444,7 @@ function renderNewsList({ type = null } = {}) {
 }
 
 /* ======================================================
-   5) RENDER: ARTICLE PAGE (NEWS + UDRUGE + PROJEKTI)
+   6) RENDERERS: ARTICLE PAGE (news/udruga/projekt)
 ====================================================== */
 
 function renderArticlePage() {
@@ -348,16 +456,18 @@ function renderArticlePage() {
   const kind = (params.get("kind") || "").toLowerCase();
 
   const findItem = () => {
-    if (kind === "udruga") return { kind: "udruga", item: UDRUGE_DB.find(x => x.id === id) };
-    if (kind === "projekt") return { kind: "projekt", item: PROJEKTI_DB.find(x => x.id === id) };
+    if (kind === "udruga")
+      return { kind: "udruga", item: UDRUGE_DB.find((x) => x.id === id) };
+    if (kind === "projekt")
+      return { kind: "projekt", item: PROJEKTI_DB.find((x) => x.id === id) };
 
-    const n = NEWS_DB.find(x => x.id === id);
+    const n = NEWS_DB.find((x) => x.id === id);
     if (n) return { kind: "news", item: n };
 
-    const u = UDRUGE_DB.find(x => x.id === id);
+    const u = UDRUGE_DB.find((x) => x.id === id);
     if (u) return { kind: "udruga", item: u };
 
-    const p = PROJEKTI_DB.find(x => x.id === id);
+    const p = PROJEKTI_DB.find((x) => x.id === id);
     if (p) return { kind: "projekt", item: p };
 
     return { kind: "unknown", item: null };
@@ -389,37 +499,37 @@ function renderArticlePage() {
     const paragraphs = String(item.content || "")
       .split(/\n\s*\n/g)
       .filter(Boolean)
-      .map(p => `<p>${escapeHtml(p)}</p>`)
+      .map((p) => `<p>${escapeHtml(p)}</p>`)
       .join("");
 
     bodyHtml = paragraphs;
     backHref = item.type === "Kolumne" ? "kolumne.html" : "vijesti.html";
   } else if (foundKind === "udruga") {
-      title = item.name;
-      meta = `Udruga • ${item.category}`;
-      imgSrc = item.image ?? imgSrc;
+    title = item.name;
+    meta = `Udruga • ${item.category}`;
+    imgSrc = item.image ?? imgSrc;
 
-      const paragraphs = String(item.content || item.description || "")
-        .split(/\n\s*\n/g)
-        .filter(Boolean)
-        .map(p => `<p>${escapeHtml(p)}</p>`)
-        .join("");
+    const paragraphs = String(item.content || item.description || "")
+      .split(/\n\s*\n/g)
+      .filter(Boolean)
+      .map((p) => `<p>${escapeHtml(p)}</p>`)
+      .join("");
 
-      bodyHtml = paragraphs;
-      backHref = "udruge.html";
+    bodyHtml = paragraphs;
+    backHref = "udruge.html";
   } else if (foundKind === "projekt") {
-      title = item.name;
-      meta = `Projekt • ${item.status}`;
-      imgSrc = item.image ?? imgSrc;
+    title = item.name;
+    meta = `Projekt • ${item.status}`;
+    imgSrc = item.image ?? imgSrc;
 
-      const paragraphs = String(item.content || item.description || "")
-        .split(/\n\s*\n/g)
-        .filter(Boolean)
-        .map(p => `<p>${escapeHtml(p)}</p>`)
-        .join("");
+    const paragraphs = String(item.content || item.description || "")
+      .split(/\n\s*\n/g)
+      .filter(Boolean)
+      .map((p) => `<p>${escapeHtml(p)}</p>`)
+      .join("");
 
-      bodyHtml = paragraphs;
-      backHref = "projekti.html";
+    bodyHtml = paragraphs;
+    backHref = "projekti.html";
   }
 
   document.title = `Studentski Portal | ${title}`;
@@ -443,14 +553,14 @@ function renderArticlePage() {
 }
 
 /* ======================================================
-   6) RENDER: UDRUGE / PROJEKTI
+   7) RENDERERS: UDRUGE / PROJEKTI LISTS
 ====================================================== */
 
 function renderUdruge() {
   const list = document.getElementById("udrugeList");
   if (!list) return;
 
-  list.innerHTML = UDRUGE_DB.map(u => {
+  list.innerHTML = UDRUGE_DB.map((u) => {
     const href = `article.html?kind=udruga&id=${encodeURIComponent(u.id)}`;
     const imgSrc = u.image ?? "../images/hero.jpg";
 
@@ -472,7 +582,7 @@ function renderProjekti() {
   const list = document.getElementById("projektiList");
   if (!list) return;
 
-  list.innerHTML = PROJEKTI_DB.map(p => {
+  list.innerHTML = PROJEKTI_DB.map((p) => {
     const href = `article.html?kind=projekt&id=${encodeURIComponent(p.id)}`;
     const imgSrc = p.image ?? "../images/hero.jpg";
 
@@ -490,14 +600,9 @@ function renderProjekti() {
   }).join("");
 }
 
-function parseCroDateToISO(dateStr) {
-  // expects "DD.MM.YYYY." or "DD.MM.YYYY"
-  const clean = String(dateStr || "").trim().replace(/\.$/, "");
-  const m = clean.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
-  if (!m) return null;
-  const [, dd, mm, yyyy] = m;
-  return `${yyyy}-${mm}-${dd}`; // ISO string for reliable sorting
-}
+/* ======================================================
+   8) RENDERERS: EVENTS TABLE (events.html)
+====================================================== */
 
 function renderEventsPage() {
   const tbody = document.getElementById("eventsTbody");
@@ -506,24 +611,25 @@ function renderEventsPage() {
   const items = [...EVENTS_DB].sort((a, b) => {
     const aIso = parseCroDateToISO(a.date) || "";
     const bIso = parseCroDateToISO(b.date) || "";
-    return aIso.localeCompare(bIso); // ascending (oldest -> newest)
+    return aIso.localeCompare(bIso);
   });
 
   tbody.innerHTML = items
-    .map((e) => `
-      <tr>
-        <td>${escapeHtml(e.date)}</td>
-        <td>${escapeHtml(e.title)}</td>
-        <td>${escapeHtml(e.location)}</td>
-        <td>${escapeHtml(e.description)}</td>
-      </tr>
-    `)
+    .map(
+      (e) => `
+        <tr>
+          <td>${escapeHtml(e.date)}</td>
+          <td>${escapeHtml(e.title)}</td>
+          <td>${escapeHtml(e.location)}</td>
+          <td>${escapeHtml(e.description)}</td>
+        </tr>
+      `,
+    )
     .join("");
 }
 
-
 /* ======================================================
-   7) SEARCH: build + render results on search.html
+   9) SEARCH: build + render results on search.html
 ====================================================== */
 
 function buildSearchResults(query) {
@@ -532,9 +638,9 @@ function buildSearchResults(query) {
 
   const results = [];
 
-  // NEWS
   for (const n of NEWS_DB) {
-    const hay = `${n.title} ${n.excerpt} ${n.content} ${n.tag} ${n.type}`.toLowerCase();
+    const hay =
+      `${n.title} ${n.excerpt} ${n.content} ${n.tag} ${n.type}`.toLowerCase();
     if (hay.includes(q)) {
       results.push({
         kind: "news",
@@ -548,9 +654,9 @@ function buildSearchResults(query) {
     }
   }
 
-  // UDRUGE
   for (const u of UDRUGE_DB) {
-    const hay = `${u.name} ${u.description} ${u.category}`.toLowerCase();
+    const hay =
+      `${u.name} ${u.description} ${u.content || ""} ${u.category}`.toLowerCase();
     if (hay.includes(q)) {
       results.push({
         kind: "udruga",
@@ -564,9 +670,9 @@ function buildSearchResults(query) {
     }
   }
 
-  // PROJEKTI
   for (const p of PROJEKTI_DB) {
-    const hay = `${p.name} ${p.description} ${p.status}`.toLowerCase();
+    const hay =
+      `${p.name} ${p.description} ${p.content || ""} ${p.status}`.toLowerCase();
     if (hay.includes(q)) {
       results.push({
         kind: "projekt",
@@ -591,7 +697,6 @@ function renderSearchPage() {
   const params = new URLSearchParams(location.search);
   const q = params.get("q") || "";
 
-  // Keep input in header filled
   const input = document.getElementById("globalSearch");
   if (input) input.value = q;
 
@@ -617,42 +722,18 @@ function renderSearchPage() {
 }
 
 /* ======================================================
-   8) PAGE ROUTING
+   10) PAGE ROUTING
 ====================================================== */
 
 (() => {
   const file = (location.pathname.split("/").pop() || "").toLowerCase();
 
-  // Single-item pages
-  if (file === "article.html") {
-    renderArticlePage();
-    return;
-  }
+  if (file === "article.html") return void renderArticlePage();
+  if (file === "search.html") return void renderSearchPage();
+  if (file === "events.html") return void renderEventsPage();
+  if (file === "udruge.html") return void renderUdruge();
+  if (file === "projekti.html") return void renderProjekti();
 
-  // Search
-  if (file === "search.html") {
-    renderSearchPage();
-    return;
-  }
-
-  // Events
-  if (file === "events.html") {
-    renderEventsPage();
-    return;
-  }
-
-  // Udruge / Projekti pages
-  if (file === "udruge.html") {
-    renderUdruge();
-    return;
-  }
-
-  if (file === "projekti.html") {
-    renderProjekti();
-    return;
-  }
-
-  // News list pages (index/vijesti/kolumne) if placeholder exists
   const type = getPageTypeByPath();
   if (document.getElementById("newsList")) {
     renderNewsList({ type });
@@ -660,16 +741,14 @@ function renderSearchPage() {
 })();
 
 /* ======================================================
-   9) UI BEHAVIOR (year, nav, global search redirect)
+   11) UI BEHAVIOR (shared)
 ====================================================== */
 
-// Footer year
 (() => {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
 
-// Mobile nav toggle
 (() => {
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
@@ -677,7 +756,16 @@ function renderSearchPage() {
   burger.addEventListener("click", () => nav.classList.toggle("open"));
 })();
 
-// Global search (always visible): redirect to search.html?q=...
+(() => {
+  const current = (
+    location.pathname.split("/").pop() || "index.html"
+  ).toLowerCase();
+  document.querySelectorAll(".nav .nav-link").forEach((a) => {
+    const href = (a.getAttribute("href") || "").split("?")[0].toLowerCase();
+    if (href === current) a.classList.add("active");
+  });
+})();
+
 (() => {
   const input = document.getElementById("globalSearch");
   const btn = document.getElementById("doSearch");
@@ -699,36 +787,10 @@ function renderSearchPage() {
   });
 })();
 
-// Sidebar tabs (if present)
-(() => {
-  const tabs = document.querySelectorAll(".tab");
-  const most = document.getElementById("tab-most");
-  const newest = document.getElementById("tab-new");
-  if (!tabs.length || !most || !newest) return;
-
-  tabs.forEach(t => {
-    t.addEventListener("click", () => {
-      tabs.forEach(x => x.classList.remove("active"));
-      t.classList.add("active");
-
-      const showMost = t.dataset.tab === "most";
-      most.hidden = !showMost;
-      newest.hidden = showMost;
-    });
-  });
-})();
-
-(() => {
-  const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-  document.querySelectorAll(".nav .nav-link").forEach((a) => {
-    const href = (a.getAttribute("href") || "").split("?")[0].toLowerCase();
-    if (href === current) a.classList.add("active");
-  });
-})();
-
 /* ======================================================
-   CONTACT FORM VALIDATION (contact.html)
+   12) CONTACT FORM VALIDATION (contact.html)
 ====================================================== */
+
 (() => {
   const form = document.getElementById("contactForm");
   if (!form) return;
@@ -741,8 +803,8 @@ function renderSearchPage() {
     modal.hidden = true;
   };
 
-  closeBtn.addEventListener("click", closeModal);
-  okBtn.addEventListener("click", closeModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (okBtn) okBtn.addEventListener("click", closeModal);
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
@@ -751,32 +813,31 @@ function renderSearchPage() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const fullName = document.getElementById("fullName").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const fullName = document.getElementById("fullName")?.value.trim() || "";
+    const email = document.getElementById("email")?.value.trim() || "";
+    const subject = document.getElementById("subject")?.value.trim() || "";
+    const message = document.getElementById("message")?.value.trim() || "";
 
     if (!fullName || !email || !subject || !message) {
       alert("Molimo ispuni sva obavezna polja.");
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!isValidEmail(email)) {
       alert("Unesi ispravnu email adresu.");
       return;
     }
 
-    // SHOW SUCCESS POPUP
     modal.hidden = false;
 
     form.reset();
-    document.getElementById("toEmail").value = "kontakt@studentski-portal.hr";
+    const toEmail = document.getElementById("toEmail");
+    if (toEmail) toEmail.value = "kontakt@studentski-portal.hr";
   });
 })();
 
 /* ======================================================
-   AUTH FORMS: LOGIN + REGISTER (demo)
+   13) AUTH FORMS (login.html / register.html) - demo
 ====================================================== */
 
 function isValidEmail(email) {
@@ -793,18 +854,17 @@ function openModal(modalId) {
   if (!modal) return;
   modal.hidden = false;
 
-  const close = () => { modal.hidden = true; };
+  const close = () => {
+    modal.hidden = true;
+  };
 
-  // Close buttons inside modal
-  modal.querySelectorAll("[data-close-modal]").forEach(btn => {
+  modal.querySelectorAll("[data-close-modal]").forEach((btn) => {
     btn.addEventListener("click", close, { once: true });
   });
 
-  // Overlay click closes too
   const overlay = modal.querySelector(".modal-overlay");
   if (overlay) overlay.addEventListener("click", close, { once: true });
 
-  // ESC closes
   const onKey = (e) => {
     if (e.key === "Escape") {
       close();
@@ -822,8 +882,8 @@ function openModal(modalId) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const email = document.getElementById("loginEmail").value.trim();
-    const pass = document.getElementById("loginPassword").value;
+    const email = document.getElementById("loginEmail")?.value.trim() || "";
+    const pass = document.getElementById("loginPassword")?.value || "";
 
     setErr("loginEmailErr", "");
     setErr("loginPasswordErr", "");
@@ -854,11 +914,11 @@ function openModal(modalId) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("regFullName").value.trim();
-    const email = document.getElementById("regEmail").value.trim();
-    const pass1 = document.getElementById("regPassword").value;
-    const pass2 = document.getElementById("regPassword2").value;
-    const terms = document.getElementById("regTerms").checked;
+    const name = document.getElementById("regFullName")?.value.trim() || "";
+    const email = document.getElementById("regEmail")?.value.trim() || "";
+    const pass1 = document.getElementById("regPassword")?.value || "";
+    const pass2 = document.getElementById("regPassword2")?.value || "";
+    const terms = !!document.getElementById("regTerms")?.checked;
 
     setErr("regFullNameErr", "");
     setErr("regEmailErr", "");
@@ -895,4 +955,3 @@ function openModal(modalId) {
     openModal("registerModal");
   });
 })();
-
