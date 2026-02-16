@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studentski Portal | Registracija</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-row">
+      <a class="logo" href="index.html">STUDENTSKI<br><span>PORTAL</span></a>
+      <div class="top-actions">
+        <a class="small-link" href="login.html">Login</a>
+        <a class="small-link" href="register.html">Registracija</a>
+        <button class="burger" id="burger" type="button">☰</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container">
+      <nav class="nav" id="nav">
+        <a class="nav-link" href="vijesti.html">Vijesti</a>
+        <a class="nav-link" href="kolumne.html">Kolumne</a>
+        <a class="nav-link" href="udruge.html">Udruge</a>
+        <a class="nav-link" href="projekti.html">Projekti</a>
+        <a class="nav-link" href="fotogalerija.html">Fotogalerija</a>
+        <a class="nav-link" href="events.html">Eventi</a>
+        <a class="nav-link" href="contact.html">Kontakt</a>
+      </nav>
+
+
+      <div class="searchbar" id="searchbar">
+        <input id="globalSearch" type="search" placeholder="Upiši pojam..." />
+        <button class="btn" type="button" id="doSearch">Pretraži</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page auth-page">
+    <section class="content">
+      <div class="section-title">
+        <h1>Registracija</h1>
+        <p class="muted">Demo registracija (bez stvarne baze korisnika).</p>
+      </div>
+
+      <div class="card auth-card">
+        <form id="registerForm" class="auth-form" novalidate>
+
+          <div class="form-group">
+            <label for="regFullName">Ime i prezime *</label>
+            <input id="regFullName" type="text" placeholder="Ivan Horvat" required />
+            <small class="field-error" id="regFullNameErr"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="regEmail">Email *</label>
+            <input id="regEmail" type="email" placeholder="ivan@email.com" required />
+            <small class="field-error" id="regEmailErr"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="regPassword">Lozinka *</label>
+            <input id="regPassword" type="password" placeholder="Min 6 znakova" required />
+            <small class="field-error" id="regPasswordErr"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="regPassword2">Ponovi lozinku *</label>
+            <input id="regPassword2" type="password" placeholder="Ponovi lozinku" required />
+            <small class="field-error" id="regPassword2Err"></small>
+          </div>
+
+          <div class="form-group checkbox-row">
+            <input id="regTerms" type="checkbox" />
+            <label for="regTerms">Prihvaćam uvjete korištenja *</label>
+          </div>
+          <small class="field-error" id="regTermsErr"></small>
+
+          <button class="btn" type="submit">Registriraj se</button>
+
+          <p class="muted auth-hint">
+            Već imaš račun?
+            <a class="more" href="login.html">Prijavi se</a>
+          </p>
+
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal" id="registerModal" hidden>
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" data-close-modal>×</button>
+      <h2>Uspješna registracija</h2>
+      <p>Demo registracija je uspješno prošla.</p>
+      <button class="btn" data-close-modal>U redu</button>
+    </div>
+  </div>
+
+    <footer class="footer">
+    <div class="container footer-row footer-stack">
+        <p class="footer-site">
+        © <span id="year"></span> Studentski Portal
+        </p>
+
+        <p class="footer-author">
+        Created by Petar Bajus —
+        <a href="mailto:bajus.petar@email.com">bajus.petar@email.com</a>
+        </p>
+    </div>
+    </footer>
+
+</body>
+</html>
