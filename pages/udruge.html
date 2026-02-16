@@ -1,20 +1,22 @@
+<!-- =========================
+     udruge.html (UPDATED NAV)
+========================= -->
 <!doctype html>
 <html lang="hr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Studentski Portal | Eventi</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <title>Studentski Portal | Udruge</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <script defer src="../js/main.js"></script>
 </head>
 <body>
-
   <div class="topbar">
     <div class="container topbar-row">
-      <a class="logo" href="index.html">STUDENTSKI<br><span>PORTAL</span></a>
+      <a class="logo" href="../index.html">STUDENTSKI<br><span>PORTAL</span></a>
       <div class="top-actions">
-        <a class="small-link" href="login.html">Login</a>
-        <a class="small-link" href="register.html">Registracija</a>
+        <a class="small-link" href="./login.html">Login</a>
+        <a class="small-link" href="./register.html">Registracija</a>
         <button class="burger" id="burger" type="button" aria-label="Otvori izbornik">☰</button>
       </div>
     </div>
@@ -32,7 +34,6 @@
         <a class="nav-link" href="contact.html">Kontakt</a>
       </nav>
 
-
       <div class="searchbar" id="searchbar">
         <input id="globalSearch" type="search" placeholder="Upiši pojam..." aria-label="Pretraži pojam" />
         <button class="btn" type="button" id="doSearch">Pretraži</button>
@@ -43,42 +44,25 @@
   <main class="container page">
     <section class="content">
       <div class="section-title">
-        <h1>Eventi</h1>
-        <p class="muted">Popis nadolazećih događaja (sortirano po datumu).</p>
+        <h1>Udruge</h1>
+        <p class="muted">Popis studentskih udruga (demo baza).</p>
       </div>
 
-      <div class="card">
-        <div class="table-wrap">
-          <table class="events-table">
-            <thead>
-            <tr>
-                <th>Datum</th>
-                <th>Naziv</th>
-                <th>Lokacija</th>
-                <th>Opis</th>
-            </tr>
-            </thead>
-            <tbody id="eventsTbody">
-              <!-- JS renders rows here -->
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <div class="cards cards-2" id="udrugeList"></div>
     </section>
   </main>
 
-<footer class="footer">
-  <div class="container footer-row footer-stack">
-    <p class="footer-site">
-      © <span id="year"></span> Studentski Portal
-    </p>
+  <footer class="footer">
+    <div class="container footer-row footer-stack">
+      <p class="footer-site">
+        © <span id="year"></span> Studentski Portal
+      </p>
 
-    <p class="footer-author">
-      Created by Petar Bajus —
-      <a href="mailto:bajus.petar@email.com">bajus.petar@email.com</a>
-    </p>
-  </div>
-</footer>
-
+      <p class="footer-author">
+        Created by Petar Bajus —
+        <a href="mailto:bajus.petar@email.com">bajus.petar@email.com</a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>

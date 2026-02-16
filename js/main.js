@@ -65,7 +65,7 @@ const NEWS_DB = [
       "Detalje uvjeta i potrebne dokumente provjeri na službenoj stranici institucije.",
     date: "12.02.2026.",
     readTime: "3 min",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new News({
     id: "n2",
@@ -78,7 +78,7 @@ const NEWS_DB = [
       "Preporuka: rezerviraj mjesto ranije u danu ako planiraš duže učenje.",
     date: "11.02.2026.",
     readTime: "2 min",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new News({
     id: "n3",
@@ -91,7 +91,7 @@ const NEWS_DB = [
       "Praksa traje 6–8 tjedana i uključuje mentorstvo te rad na stvarnim zadacima.",
     date: "09.02.2026.",
     readTime: "3 min",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new News({
     id: "n4",
@@ -105,7 +105,7 @@ const NEWS_DB = [
     date: "10.02.2026.",
     readTime: "4 min",
     tag: "Kolumna",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new News({
     id: "n5",
@@ -119,7 +119,7 @@ const NEWS_DB = [
     date: "08.02.2026.",
     readTime: "5 min",
     tag: "Kolumna",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new News({
     id: "n6",
@@ -133,7 +133,7 @@ const NEWS_DB = [
     date: "06.02.2026.",
     readTime: "4 min",
     tag: "Kolumna",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
 ];
 
@@ -143,7 +143,7 @@ const UDRUGE_DB = [
     name: "Volonterska udruga",
     description: "Humanitarne akcije i volontiranje.",
     category: "Volonterstvo",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new Udruga({
     id: "u2",
@@ -154,7 +154,7 @@ const UDRUGE_DB = [
       "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
       "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
     category: "IT",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new Udruga({
     id: "u3",
@@ -165,7 +165,7 @@ const UDRUGE_DB = [
       "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
       "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
     category: "Sport",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
 ];
 
@@ -179,7 +179,7 @@ const PROJEKTI_DB = [
       "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
       "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
     status: "Otvorene prijave",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new Projekt({
     id: "p2",
@@ -190,7 +190,7 @@ const PROJEKTI_DB = [
       "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
       "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
     status: "U tijeku",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
   new Projekt({
     id: "p3",
@@ -201,7 +201,7 @@ const PROJEKTI_DB = [
       "Organiziramo humanitarne akcije, prikupljanje donacija i volontiranje u lokalnim ustanovama.\n\n" +
       "Članovi udruge razvijaju socijalne vještine i osjećaj solidarnosti.",
     status: "U razvoju",
-    image: "images/library.jpg",
+    image: "../images/library.jpg",
   }),
 ];
 
@@ -250,7 +250,7 @@ function getPageTypeByPath() {
 }
 
 function makeLead(news) {
-  const imgSrc = news.image ?? "img/hero.jpg";
+  const imgSrc = news.image ?? "../images/hero.jpg";
   const href = `article.html?id=${encodeURIComponent(news.id)}`;
 
   return `
@@ -369,7 +369,7 @@ function renderArticlePage() {
     container.innerHTML = `
       <div class="section-title">
         <h1>Članak nije pronađen</h1>
-        <p class="muted">Provjeri link ili se vrati na <a class="more" href="index.html">naslovnicu</a>.</p>
+        <p class="muted">Provjeri link ili se vrati na <a class="more" href="../index.html">naslovnicu</a>.</p>
       </div>
     `;
     return;
@@ -377,9 +377,9 @@ function renderArticlePage() {
 
   let title = "";
   let meta = "";
-  let imgSrc = "img/hero.jpg";
+  let imgSrc = "../images/hero.jpg";
   let bodyHtml = "";
-  let backHref = "index.html";
+  let backHref = "../index.html";
 
   if (foundKind === "news") {
     title = item.title;
@@ -452,7 +452,7 @@ function renderUdruge() {
 
   list.innerHTML = UDRUGE_DB.map(u => {
     const href = `article.html?kind=udruga&id=${encodeURIComponent(u.id)}`;
-    const imgSrc = u.image ?? "img/hero.jpg";
+    const imgSrc = u.image ?? "../images/hero.jpg";
 
     return `
       <article class="card">
@@ -474,7 +474,7 @@ function renderProjekti() {
 
   list.innerHTML = PROJEKTI_DB.map(p => {
     const href = `article.html?kind=projekt&id=${encodeURIComponent(p.id)}`;
-    const imgSrc = p.image ?? "img/hero.jpg";
+    const imgSrc = p.image ?? "../images/hero.jpg";
 
     return `
       <article class="card">
